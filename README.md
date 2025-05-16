@@ -50,7 +50,10 @@ _✨ 修复访问 QQ 图床的 SSL 错误 ✨_
 
 ## 📖 介绍
 
-Monkey Patch 了 `httpx.AsyncClient` 的 `__init__` 方法，使其始终携带一个自定义的 `SSLContext`
+插件工作原理：
+
+- 对 `httpx.AsyncClient` 的 `__init__` 方法进行 Monkey Patch，在未提供自定义 `SSLContext` 时，使用 httpx 的默认创建函数创建一个，并设置加密套件。
+- 修改 `aiohttp` 的两个全局 `SSLContext` 加密套件。
 
 ## 💿 安装
 
@@ -142,4 +145,7 @@ Telegram：[@lgc2333](https://t.me/lgc2333)
 
 ## 📝 更新日志
 
-芝士刚刚发布的插件，还没有更新日志的说 qwq~
+### 0.1.1
+
+- 重构 httpx 的 Monkey Patch，在提供自定义 SSLContext 时不进行修改
+- 新增 aiohttp 支持

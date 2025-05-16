@@ -5,7 +5,7 @@ from nonebot.plugin import PluginMetadata
 from . import __main__ as __main__
 from .config import ConfigModel
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __plugin_meta__ = PluginMetadata(
     name="修复 QQ 图床 SSL 错误",
     description="如名",
